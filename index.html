@@ -40,9 +40,24 @@ details p{margin:.45rem 0 0;max-width:48ch}
 footer{border:0}
 @media(max-width:740px){.front,.split{grid-template-columns:1fr;gap:1.3rem}.hero{padding-bottom:0}h1{font-size:clamp(3.7rem,13vw,7rem)}.poster{margin:0 .45rem}footer{align-items:start}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.poster{animation:none}}
+
+.flight{position:relative;background:#09071a;min-height:100svh}
+.flight canvas{display:none}
+.flight.rendering{height:275svh}
+.flight.rendering canvas{display:block;position:sticky;top:0;width:100%;height:100svh}
+.flight .front{min-height:87svh}
+.flight.rendering .front{position:absolute;inset:0 0 auto;display:block;pointer-events:none;padding-top:11svh;min-height:0}
+.flight.rendering .hero{max-width:min(27rem,85vw);text-shadow:0 2px 18px #09071a,0 0 40px #09071a}
+.flight.rendering h1{font-size:clamp(3.6rem,8vw,8rem)}
+.flight.rendering .poster{display:none}
+.flight.rendering .jump{pointer-events:auto}
+.flight.rendering .scene-end{display:block;position:absolute;bottom:9svh;right:5%;text-align:right;text-shadow:0 0 12px #09071a}
+.scene-end{display:none}
+.scene-end h2{color:var(--acid)}
+@media(max-width:740px){.flight.rendering .front{padding-top:4svh}.flight.rendering h1{font-size:clamp(3rem,11vw,5rem)}.flight.rendering .intro{margin:.75rem 0}.flight.rendering .hero>.label{margin-bottom:.6rem}}
 </style></head><body>
 <header class="wrap"><a class="label" href="#top">Paper Moth Press</a><nav aria-label="Main navigation"><a href="#work">Work</a><a href="#commissions">Commissions</a></nav></header>
-<main id="top"><div class="wrap front">
+<main id="top"><div class="flight"><div class="wrap front">
 <section class="hero" aria-labelledby="title">
 <p class="label">Independent illustration &amp; small editions</p>
 <h1 id="title">Paper<br>Moth <i>Press</i></h1>
@@ -53,7 +68,7 @@ footer{border:0}
 <img src="night-garden.png" width="1536" height="1024" alt="A blue moth, crescent moon, and botanical sprigs printed on vermilion paper">
 <figcaption class="label">Night Garden · Two ink print study</figcaption>
 </figure>
-</div>
+</div><div class="scene-end"><p class="label">Night Garden · Two ink print study</p><h2>Out of the dark.</h2><a href="#work">Explore the print table ↓</a></div></div>
 <section class="catalog" id="work" aria-labelledby="work-title"><div class="wrap split">
 <div><p class="label">Selected work</p><h2 id="work-title">From the<br>print table.</h2></div>
 <div>
@@ -63,4 +78,4 @@ footer{border:0}
 </div>
 </div></section>
 <section class="commissions" id="commissions"><div class="wrap"><p class="label">Commissions</p><h2>Bring an idea.<br>We’ll bring the ink.</h2><p>Editorial illustration, small edition prints, and event portraits. A commission brief starts with the subject, intended use, format, and deadline.</p></div></section></main>
-<footer class="wrap"><span>Paper Moth Press</span><span>Fictional studio · Website example</span></footer></body></html>
+<footer class="wrap"><span>Paper Moth Press</span><span>Fictional studio · Website example</span></footer><script type="module" src="./flight.js"></script></body></html>
