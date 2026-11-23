@@ -55,14 +55,24 @@ footer{border:0}
 .scene-end{display:none}
 .scene-end h2{color:var(--acid)}
 @media(max-width:740px){.flight.rendering .front{padding-top:4svh}.flight.rendering h1{font-size:clamp(3rem,11vw,5rem)}.flight.rendering .intro{margin:.75rem 0}.flight.rendering .hero>.label{margin-bottom:.6rem}}
+
+.flight{isolation:isolate}
+.flight .front{display:block;position:relative;min-height:100svh;padding:16svh 0}
+.flight .hero{width:min(32rem,90%);padding:1.5rem;background:#09071ae8}
+.flight h1{font-size:clamp(4.25rem,10vw,10rem)}
+.flight .poster{position:absolute;inset:0;z-index:-1;margin:0;padding:0;transform:none;box-shadow:none;background:transparent;animation:none}
+.flight .poster img{height:100%;object-fit:cover;opacity:.72}
+.flight .poster figcaption{position:absolute;bottom:1rem;right:1rem;background:#09071a;color:white;padding:.7rem}
+.flight.rendering .front{position:absolute}
+.flight.rendering .hero{background:#09071acb}
 </style></head><body>
 <header class="wrap"><a class="label" href="#top">Paper Moth Press</a><nav aria-label="Main navigation"><a href="#work">Work</a><a href="#commissions">Commissions</a></nav></header>
 <main id="top"><div class="flight"><div class="wrap front">
 <section class="hero" aria-labelledby="title">
-<p class="label">Independent illustration &amp; small editions</p>
-<h1 id="title">Paper<br>Moth <i>Press</i></h1>
-<p class="intro">Zines, prints, and portraits with ink that never quite stays inside the lines.</p>
-<a class="label jump" href="#work">Browse the work ↓</a>
+<p class="label">Paper Moth Press presents</p>
+<h1 id="title">Night <i>Garden</i></h1>
+<p class="intro">A flight through a two-ink print. Scroll to move through the scene.</p>
+<a class="label jump" href="#work">Skip to the portfolio ↓</a>
 </section>
 <figure class="poster">
 <img src="night-garden.png" width="1536" height="1024" alt="A blue moth, crescent moon, and botanical sprigs printed on vermilion paper">
@@ -78,4 +88,4 @@ footer{border:0}
 </div>
 </div></section>
 <section class="commissions" id="commissions"><div class="wrap"><p class="label">Commissions</p><h2>Bring an idea.<br>We’ll bring the ink.</h2><p>Editorial illustration, small edition prints, and event portraits. A commission brief starts with the subject, intended use, format, and deadline.</p></div></section></main>
-<footer class="wrap"><span>Paper Moth Press</span><span>Fictional studio · Website example</span></footer><script type="module" src="./flight.js"></script></body></html>
+<footer class="wrap"><span>Paper Moth Press</span><span>Fictional studio · Website example</span></footer><script type="module" src="./flight.js?v=2"></script></body></html>
