@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Paper Moth Press — Illustration & zines</title>
+<style>
+:root{--blue:#111944;--paper:#f6efdd;--acid:#ecff80;--red:#ff512e}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--blue);color:var(--paper);font:1.12rem/1.55 Georgia,serif}
+a{color:inherit;text-underline-offset:.25em}
+:focus-visible{outline:3px solid currentColor;outline-offset:5px}
+.wrap{width:min(92%,1440px);margin:auto}
+header,footer{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1.05rem 0;border-bottom:1px solid currentColor}
+nav{display:flex;gap:clamp(.7rem,3vw,2.5rem)}
+.label,nav,summary,footer{font:700 .76rem/1.4 'Courier New',monospace;letter-spacing:.07em;text-transform:uppercase}
+header>a{text-decoration:none}
+h1,h2,p,figure{margin:0}
+.front{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,6fr);padding:clamp(2rem,6vw,6rem) 0;align-items:center}
+.hero{position:relative;z-index:1;padding:0 0 2rem}
+.hero>.label{color:var(--acid);margin-bottom:1.25rem}
+h1{font-family:Georgia,serif;font-weight:normal;font-size:clamp(3.8rem,8.4vw,9.5rem);letter-spacing:-.095em;line-height:.81}
+h1 i{display:block;color:var(--acid);padding-left:.19em}
+.intro{max-width:29ch;margin:1.8rem 0 1.4rem}
+.jump{display:inline-block;background:var(--acid);color:var(--blue);padding:.8rem 1rem;text-decoration:none}
+.jump:hover{background:var(--paper)}
+.poster{padding:clamp(.55rem,1.5vw,1.25rem);background:var(--paper);color:var(--blue);transform:rotate(2deg);box-shadow:9px 10px 0 #080d29;animation:place .65s ease-out both}
+@keyframes place{from{opacity:0;transform:translateY(14px) rotate(1deg)}to{opacity:1;transform:rotate(2deg)}}
+.poster img{display:block;width:100%;height:auto}
+figcaption{padding:.65rem 0 0}
+.catalog{background:var(--paper);color:var(--blue)}
+.split{display:grid;grid-template-columns:4fr 6fr;gap:2.5rem;padding:clamp(3rem,8vw,7rem) 0}
+h2{font-weight:normal;font-size:clamp(2.8rem,6vw,6rem);line-height:.89;letter-spacing:-.065em;margin:.55rem 0}
+details{border-top:1px solid;padding:1rem 0}
+details:last-child{border-bottom:1px solid}
+summary{cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:1em;list-style:none;font-size:.86rem}
+summary::-webkit-details-marker{display:none}
+summary::after{content:'+';font-size:1.35rem}
+details[open] summary::after{content:'−'}
+details p{margin:.45rem 0 0;max-width:48ch}
+.commissions{background:var(--red);color:var(--blue);padding:clamp(2rem,6vw,5rem) 0}
+.commissions p:last-child{max-width:52ch;margin-top:1.25rem}
+footer{border:0}
+@media(max-width:740px){.front,.split{grid-template-columns:1fr;gap:1.3rem}.hero{padding-bottom:0}h1{font-size:clamp(3.7rem,13vw,7rem)}.poster{margin:0 .45rem}footer{align-items:start}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.poster{animation:none}}
+</style></head><body>
+<header class="wrap"><a class="label" href="#top">Paper Moth Press</a><nav aria-label="Main navigation"><a href="#work">Work</a><a href="#commissions">Commissions</a></nav></header>
+<main id="top"><div class="wrap front">
+<section class="hero" aria-labelledby="title">
+<p class="label">Independent illustration &amp; small editions</p>
+<h1 id="title">Paper<br>Moth <i>Press</i></h1>
+<p class="intro">Zines, prints, and portraits with ink that never quite stays inside the lines.</p>
+<a class="label jump" href="#work">Browse the work ↓</a>
+</section>
+<figure class="poster">
+<img src="night-garden.png" width="1536" height="1024" alt="A blue moth, crescent moon, and botanical sprigs printed on vermilion paper">
+<figcaption class="label">Night Garden · Two ink print study</figcaption>
+</figure>
+</div>
+<section class="catalog" id="work" aria-labelledby="work-title"><div class="wrap split">
+<div><p class="label">Selected work</p><h2 id="work-title">From the<br>print table.</h2></div>
+<div>
+<details open><summary>Night Garden · Print</summary><p>A moth among weeds and moonlight, drawn for a two color risograph print.</p></details>
+<details><summary>Things Found Walking · Zine</summary><p>A pocket field guide to cracked sidewalks, volunteer plants, and other things worth looking down for.</p></details>
+<details><summary>Five Minute Faces · Portraits</summary><p>Loose ink portraits imagined for a market table, each made in a single sitting.</p></details>
+</div>
+</div></section>
+<section class="commissions" id="commissions"><div class="wrap"><p class="label">Commissions</p><h2>Bring an idea.<br>We’ll bring the ink.</h2><p>Editorial illustration, small edition prints, and event portraits. A commission brief starts with the subject, intended use, format, and deadline.</p></div></section></main>
+<footer class="wrap"><span>Paper Moth Press</span><span>Fictional studio · Website example</span></footer></body></html>
