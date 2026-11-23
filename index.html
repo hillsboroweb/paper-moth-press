@@ -35,10 +35,23 @@ summary::-webkit-details-marker{display:none}
 summary::after{content:'+';font-size:1.35rem}
 details[open] summary::after{content:'−'}
 details p{margin:.45rem 0 0;max-width:48ch}
+.works-head{display:flex;justify-content:space-between;align-items:end;padding:clamp(3rem,7vw,6rem) 0 1.6rem}
+.filters{display:flex;gap:.5rem;flex-wrap:wrap}
+.filters button{font:700 .72rem 'Courier New',monospace;text-transform:uppercase;letter-spacing:.06em;color:var(--blue);background:transparent;border:1px solid var(--blue);padding:.65rem .8rem;cursor:pointer}
+.filters button:hover,.filters button.active{background:var(--blue);color:var(--paper)}
+.gallery{display:grid;grid-template-columns:1.35fr 1fr;gap:2.5rem 1.1rem;padding-bottom:clamp(4rem,8vw,7rem)}
+.work-card{margin:0}.work-card img{display:block;width:100%;aspect-ratio:1.12;object-fit:cover;background:#e7dac1;transition:transform .35s,filter .35s}
+.work-card:hover img{transform:translateY(-5px);filter:saturate(1.12)}
+.work-card.wide{grid-row:span 2}.work-card.wide img{height:calc(100% - 5rem);aspect-ratio:auto;min-height:30rem}
+.work-card.offset{margin-top:3.5rem}
+.work-card>div{padding:.7rem 0;border-top:1px solid var(--blue)}
+.work-card h3{font-size:clamp(1.6rem,3vw,2.8rem);font-weight:normal;letter-spacing:-.04em;line-height:1.1;margin:.2rem 0}
+.work-card p{font-size:.95rem}
+.work-card[hidden]{display:none}
 .commissions{background:var(--red);color:var(--blue);padding:clamp(2rem,6vw,5rem) 0}
 .commissions p:last-child{max-width:52ch;margin-top:1.25rem}
 footer{border:0}
-@media(max-width:740px){.front,.split{grid-template-columns:1fr;gap:1.3rem}.hero{padding-bottom:0}h1{font-size:clamp(3.7rem,13vw,7rem)}.poster{margin:0 .45rem}footer{align-items:start}}
+@media(max-width:740px){.works-head{display:block}.filters{margin-top:1.3rem}.gallery{grid-template-columns:1fr 1fr;gap:1.2rem .7rem}.work-card.wide{grid-row:auto}.work-card.wide img{height:auto;aspect-ratio:1.12;min-height:0}.work-card.offset{margin-top:0}.front,.split{grid-template-columns:1fr;gap:1.3rem}.hero{padding-bottom:0}h1{font-size:clamp(3.7rem,13vw,7rem)}.poster{margin:0 .45rem}footer{align-items:start}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.poster{animation:none}}
 
 .flight{position:relative;background:#09071a;min-height:100svh}
@@ -79,13 +92,20 @@ footer{border:0}
 <figcaption class="label">Night Garden · Two ink print study</figcaption>
 </figure>
 </div><div class="scene-end"><p class="label">Night Garden · Two ink print study</p><h2>Out of the dark.</h2><a href="#work">Explore the print table ↓</a></div></div>
-<section class="catalog" id="work" aria-labelledby="work-title"><div class="wrap split">
-<div><p class="label">Selected work</p><h2 id="work-title">From the<br>print table.</h2></div>
-<div>
-<details open><summary>Night Garden · Print</summary><p>A moth among weeds and moonlight, drawn for a two color risograph print.</p></details>
-<details><summary>Things Found Walking · Zine</summary><p>A pocket field guide to cracked sidewalks, volunteer plants, and other things worth looking down for.</p></details>
-<details><summary>Five Minute Faces · Portraits</summary><p>Loose ink portraits imagined for a market table, each made in a single sitting.</p></details>
-</div>
+<section class="catalog" id="work" aria-labelledby="work-title">
+<div class="wrap works-head"><div><p class="label">Selected work · 2026</p><h2 id="work-title">Prints, paper<br>&amp; other sightings.</h2></div>
+<div class="filters" role="group" aria-label="Filter work"><button class="active" data-filter="all">All work</button><button data-filter="print">Prints</button><button data-filter="zine">Zines</button><button data-filter="editorial">Editorial</button></div></div>
+<div class="wrap gallery">
+<article class="work-card wide" data-kind="print"><img src="city-moth.png" alt="Screenprinted moth hovering over a night garden and city windows"><div><span class="label">Two ink print · 2026</span><h3>Night Garden</h3><p>Screenprint · edition of 40</p></div></article>
+<article class="work-card" data-kind="zine"><img src="field-notes.png" alt="Open illustrated field notebook showing botanical studies"><div><span class="label">Folded zine · 2026</span><h3>Things Found Walking</h3><p>Risograph · 16 pages</p></div></article>
+<article class="work-card offset" data-kind="editorial"><img src="glasshouse.png" alt="Moonlit greenhouse in a two-color woodcut illustration"><div><span class="label">Editorial illustration · 2026</span><h3>The Glasshouse Hour</h3><p>Ink and carved texture</p></div></article>
 </div></section>
 <section class="commissions" id="commissions"><div class="wrap"><p class="label">Commissions</p><h2>Bring an idea.<br>We’ll bring the ink.</h2><p>Editorial illustration, small edition prints, and event portraits. A commission brief starts with the subject, intended use, format, and deadline.</p></div></section></main>
-<footer class="wrap"><span>Paper Moth Press</span><span>Fictional studio · Website example</span></footer><script type="module" src="./flight.js?v=2"></script></body></html>
+<footer class="wrap"><span>Paper Moth Press</span><span>Fictional studio · Website example</span></footer><script>
+document.querySelectorAll('.filters button').forEach(button=>button.addEventListener('click',()=>{
+ document.querySelector('.filters button.active')?.classList.remove('active');
+ button.classList.add('active');
+ document.querySelectorAll('.work-card').forEach(card=>card.hidden=button.dataset.filter!=='all'&&card.dataset.kind!==button.dataset.filter);
+}));
+</script>
+<script type="module" src="./flight.js?v=2"></script></body></html>
